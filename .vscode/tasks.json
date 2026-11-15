@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Arduino: build Uno",
+      "type": "process",
+      "command": "/home/fxr/.platformio/penv/bin/pio",
+      "args": [
+        "run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Arduino: refresh clangd headers",
+      "type": "process",
+      "command": "/home/fxr/.platformio/penv/bin/pio",
+      "args": [
+        "run",
+        "-t",
+        "compiledb"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clang++: build active desktop C++ file",
+      "type": "process",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build"
+    }
+  ]
+}
