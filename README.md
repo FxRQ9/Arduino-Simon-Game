@@ -28,7 +28,17 @@ You will also need jumper wires and a USB data cable to connect the Arduino to y
 
 ## Wiring
 
-*A circuit diagram and a photo of the wiring will be added here.*
+### Breadboard Wiring Diagram
+
+![Arduino Uno connected to three LEDs, three pushbuttons, and a piezo buzzer on a breadboard](docs/wiring-diagram.png)
+
+### Circuit Schematic
+
+![Circuit schematic for the Arduino Simon memory game](docs/schematic.png)
+
+[Open or download the schematic as a PDF](docs/schematic.pdf).
+
+### Pin Connections
 
 The firmware uses these pin assignments:
 
@@ -121,4 +131,4 @@ I practiced several programming and electronics concepts:
 - **Repeatable randomness after reset:** the code does not currently call `randomSeed()`, so the pseudorandom sequence repeats from the same starting state after a board reset. Seeding the generator is a planned improvement.
 - **Limited sequence capacity:** the sequence grows dynamically on a board with limited RAM, and the level and step counters use 8-bit values. A future version should define a maximum level and handle reaching it.
 - **Code cleanup:** some button-handling logic is repeated, and older commented-out code remains. Refactoring these sections would make the project easier to maintain.
-- **Documentation:** project photos, a circuit diagram, and a gameplay video still need to be added.
+- **Documentation:** photos of the assembled project and a gameplay video still need to be added.
